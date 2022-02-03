@@ -1,5 +1,5 @@
 import { currencyFormat } from "../utils/utils";
-import "./Bill.css";
+import "./Bill.scss";
 
 const Bill = (props) => {
     const { name, price, deadline, url, status } = props;

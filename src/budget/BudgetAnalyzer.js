@@ -1,6 +1,6 @@
 import { currencyFormat, groupBy } from "../utils/utils";
 
-import "./BudgetAnalyzer.css";
+import "./BudgetAnalyzer.scss";
 
 const MY_MONEY = 3000000;
 
@@ -24,19 +24,17 @@ const BudgetAnalyzer = (props) => {
     const { bills } = props;
     const { totalToPay, filteredBills } =filterBillsByStatus(bills);
     const availableMoney = MY_MONEY - totalToPay;
-
     console.log(filteredBills);
-
+    const pendingToPay = sumBills(filteredBills.pending) + sumBills(filteredBills.expired)
 
     return (
         <section className="budget">
-
-            Presupuesto: {currencyFormat(MY_MONEY)}
-            Total por pagar: {currencyFormat(totalToPay)}
-            Disponible: {currencyFormat(availableMoney)}
-
-            Pagado: {currencyFormat(sumBills(filteredBills.paid))}
-
+            <span className="pill pill__primary">Presupuesto: {currencyFormat(MY_MONEY)}</span>
+            <span className="pill pill__warning">Total por pagar: {currencyFormat(totalToPay)}</span>
+            <span className="pill pill__available">Disponible: {currencyFormat(availableMoney)}</span>
+            <span className="pill pill__pending">Pendiente por pagar: {currencyFormat(pendingToPay)}</span>
+            <span className="pill pill__info">Pagado: {currencyFormat(sumBills(filteredBills.paid))}</span>
+        
             
         </section>
     );
