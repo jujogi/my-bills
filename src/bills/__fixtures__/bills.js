@@ -20,6 +20,13 @@ const bills = [
         deadline: 2,
         url: "#"
     },
+    {
+        name: "🐶 Comida Emma",
+        price: 110000,
+        status: "paid",
+        deadline: 2,
+        url: "#"
+    },
 ];
 
 export default bills;
