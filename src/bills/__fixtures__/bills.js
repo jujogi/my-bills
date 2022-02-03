@@ -1,5 +1,6 @@
 const bills = [
     {
+        id: 1,
         name: "🏡 Arriendo Prados de Zaragoza",
         price: 1150000,
         status: "paid",
@@ -7,6 +8,7 @@ const bills = [
         url: "#"
     },
     {
+        id: 2,
         name: "🚙 Crédito Carro",
         price: 750000,
         status: "pending",
@@ -14,6 +16,7 @@ const bills = [
         url: "#"
     },
     {
+        id: 3,
         name: "⚡️ Servicios públicos",
         price: 170000,
         status: "expired",
@@ -21,6 +24,7 @@ const bills = [
         url: "#"
     },
     {
+        id: 4,
         name: "🐶 Comida Emma",
         price: 110000,
         status: "paid",
