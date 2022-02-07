@@ -1,5 +1,5 @@
 import { currencyFormat } from "../utils/utils";
-import "./Bill.css";
+import "./Bill.scss";
 
 
 const updateStatusToPaid = (bill) => {
