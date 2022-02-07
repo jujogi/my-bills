@@ -1,0 +1,48 @@
+.budget {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: #f5f7fa;
+    box-shadow: 0px -1px 15px 1px rgba(0, 0, 0, .25);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+
+    @media all and (max-width: 720px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        & > div {
+            width: 100%;
+        }
+    }
+}
+
+.pill{
+    color: #fff;
+    padding: 0.5rem;
+    display: inline-block;
+    margin: 0.2rem;
+    border-radius: 4px;
+
+    &__primary{
+        background-color: #28a745;
+    }
+    &__available{
+        background-color: #007bff;
+    }
+    &__pending{
+        background-color: #dc3545;
+    }
+    &__warning{
+        color: black;
+        background-color: #ffc107;
+    }
+    &__info {
+        background-color: #17a2b8;
+    }
+}

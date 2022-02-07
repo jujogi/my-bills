@@ -1,0 +1,76 @@
+.bill {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    border-bottom: solid 2px rgba(185, 192, 203, .6);
+    background-color: #f0f3f8;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &--paid {
+        border-bottom: solid 2px #1aab4b;
+
+        &::before {
+            position: absolute;
+            font-size: 35px;
+            right: 20px;
+            top: 20px;
+            content: "✅";
+        }
+    }
+
+    &--expired {
+        border-bottom: solid 2px #d8340f;
+    }
+    
+    &--expired::before {
+        position: absolute;
+        font-size: 35px;
+        right: 20px;
+        top: 20px;
+        content: "❌";
+    }
+
+    &__name {
+        width: 80%;
+        color: #0b0b14;
+    }
+    
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    &__deadline {
+        color: #6772f1;
+    }
+    
+    &__price {
+        color: #1aab4b;
+        margin: 10px 0;
+    }
+
+    &__link {
+        display: block;
+        padding: 15px 20px;
+        width: fit-content;
+        border-radius: 4px;
+        text-decoration: none;
+        background-color: #f38847;
+        color: #FFF;
+        border: none;
+        cursor: pointer;
+
+        &--green {
+            background-color: #1aab4b;
+            font-size: .8em;
+            padding: 10px 15px;
+        }
+    }
+}
