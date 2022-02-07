@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import Bill from "./bills/Bill";
+// import CreateBill from "./bills/CreateBill";
 import fakeBills from "./bills/__fixtures__/bills";
 import BudgetAnalyzer from "./budget/BudgetAnalyzer";
 
@@ -13,7 +14,7 @@ const App = () => {
   const [billList, setBillList] = useState(fakeBills);
 
   const updateBillStatus = (id) => {
-    
+
     const bill = billList.find(bill => bill.id === id);
     bill.status = "paid";
 
@@ -28,6 +29,8 @@ const App = () => {
         <h1 className="header__title">💸 My bills</h1>
       </header>
 
+    {/* <CreateBill /> */}
+    
       <main className="bills">
       {billList.map((bill, index) => (
           <Bill
