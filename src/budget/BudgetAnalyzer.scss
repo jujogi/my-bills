@@ -4,6 +4,11 @@
     width: 100%;
     padding: 20px;
     background-color: #f5f7fa;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .pill{
@@ -11,11 +16,13 @@
     padding: 0.5rem;
     display: inline-block;
     margin: 0.2rem;
+    border-radius: 4px;
+
     &__primary{
-        background-color: #007bff;
+        background-color: #28a745;
     }
     &__available{
-        background-color: #28a745;
+        background-color: #007bff;
     }
     &__pending{
         background-color: #dc3545;

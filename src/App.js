@@ -13,6 +13,7 @@ const App = () => {
   const [billList, setBillList] = useState(fakeBills);
 
   const updateBillStatus = (id) => {
+    
     const bill = billList.find(bill => bill.id === id);
     bill.status = "paid";
 
