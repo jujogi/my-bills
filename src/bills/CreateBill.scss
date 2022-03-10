@@ -15,8 +15,10 @@
     background: #FFF;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 35px 20px;
     box-sizing: border-box;
+    margin-bottom: 82px;
+    border-radius: 15px;
 
     &__input {
         padding: 15px 5px;
@@ -26,6 +28,8 @@
 
         &--submit {
             background-color: #f38847;
+            color: white;
+            font-weight: bold;
         }
     }
 }

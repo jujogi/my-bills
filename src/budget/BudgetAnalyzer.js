@@ -9,21 +9,23 @@ const sumBills = (bills = []) => {
 }
 
 const filterBillsByStatus = (bills) => {
-    const filteredBills = groupBy(bills, "status");
     const totalToPay = sumBills(bills);
+    const { pending, paid } = groupBy(bills, "status");
 
     return {
-        filteredBills,
-        totalToPay
+        totalToPay,
+        pending,
+        paid
     }
 };
 
 
 const BudgetAnalyzer = (props) => {
     const { bills } = props;
-    const { totalToPay, filteredBills } = filterBillsByStatus(bills);
-    const availableMoney = MY_MONEY - totalToPay;
-    const pendingToPay = sumBills(filteredBills.pending) + sumBills(filteredBills.expired)
+    const { totalToPay = 0, paid = [], pending = [] } = filterBillsByStatus(bills);
+    
+    const availableMoney = (MY_MONEY - totalToPay) < 0 ? 0 : MY_MONEY - totalToPay;
+    const pendingToPay = sumBills(pending);
 
     return (
         <section className="budget">
@@ -35,11 +37,8 @@ const BudgetAnalyzer = (props) => {
             <div>
                 <span className="pill pill__warning">💰 Total por pagar: {currencyFormat(totalToPay)}</span>
                 <span className="pill pill__pending">⌛️ Pendiente por pagar: {currencyFormat(pendingToPay)}</span>
-                <span className="pill pill__info">💵 Pagado: {currencyFormat(sumBills(filteredBills.paid))}</span>
+                <span className="pill pill__info">💵 Pagado: {currencyFormat(sumBills(paid))}</span>
             </div>
-
-        
-            
         </section>
     );
 
